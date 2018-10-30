@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <script crossorigin
+      src="https://unpkg.com/react@16/umd/react.production.min.js"></script>
+    <script crossorigin
+      src="https://unpkg.com/react-dom@16/umd/react-dom.production.min.js"></script>
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="app"></div>
+
+  </body>
+  <script type='text/babel'>
+    //any content for a given element will be pushed into the 'children' argument of React.createElement()
+    //e.g
+    //<p>text</p>
+    //React.createElement('p', null, text')
+
+    //we can take this a step further by nesting another React.createElement call within another!
+    const nestedElement = React.createElement('p', null, React.createElement('strong', null, 'this is some bold text inside a paragraph element'))
+
+    //a word of warning, this would get unwieldy very soon if you were to write everything in this style. ^^^
+
+    ReactDOM.render(nestedElement, document.getElementById('app'))
+  </script>
+</html>
